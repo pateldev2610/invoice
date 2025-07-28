@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="1.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Invoice Generator</h1>
+    <tr><th>Gst no-222789a4</th></th></tr>
+    <div class="section">
+      <label>Company Name:</label>
+      <input type="text" id="companyName">
+      <label>Client Name:</label>
+      <input type="text" id="clientName">
+      <label>Invoice Date:</label>
+      <input type="date" id="invoiceDate">
+    </div>
+
+    <div class="section">
+      <table id="invoiceTable">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Rate</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="invoiceBody">
+          <tr>
+            <td><input type="text" class="desc"></td>
+            <td><input type="number" class="qty" value="1"></td>
+            <td><input type="number" class="rate" value="0"></td>
+            <td class="amount">0</td>
+            <td><button onclick="removeRow(this)">🗑️</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button onclick="addRow()">Add Item ➕</button>
+    </div>
+
+    <div class="section totals">
+      <p>Subtotal: <span id="subtotal">0.00</span></p>
+      <p>Tax (10%): <span id="tax">0.00</span></p>
+      <p><strong>Total: <span id="total">0.00</span></strong></p>
+    </div>
+
+    <button onclick="window.print()">🖨️ Print Invoice</button>
+  </div>
+
+  <script src="1.js"></script>
+</body>
+</html>
